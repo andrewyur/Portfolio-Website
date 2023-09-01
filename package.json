@@ -1,7 +1,8 @@
 {
   "name": "projects",
   "version": "1.0.0",
-  "description": "",
+  "homepage": "https://andrewyur.github.io/react-gh-pages",
+  "description": "portfolio website",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server .",
@@ -16,6 +17,7 @@
     "@babel/preset-env": "^7.22.14",
     "@babel/preset-react": "^7.22.5",
     "babel-loader": "^9.1.3",
+    "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.3",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
