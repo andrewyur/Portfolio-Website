@@ -22,8 +22,13 @@ const MOUSE_SENSITIVITY = 400;
 // remesh and touch up torso model
 // loading animation
 // shaders
-// text
-// rotation limiting
+// text + text colors
+// rotation limiting/easing
+// refine background colors and environment presets
+// color transitions?
+// autorotate / passive mouse rotation
+// content for about section
+// styling
 
 export default class About extends React.Component {
     constructor(props){
@@ -67,12 +72,18 @@ export default class About extends React.Component {
     render(){
         console.log(this.state.background);
         return (
-            <Canvas camera={{ position: [-2.5,1.5,4], fov: 10 }}>
-                <ambientLight intensity={0.5} />
-                <Torso position={[0.3,-0.2,0]} rotation={[this.state.xRotation, this.state.yRotation, this.state.zRotation]} scale={0.225} />
-                <Environment preset={this.state.environment} />
-                <color args={[this.state.background]} attach="background"/>
-            </Canvas>
+            <div id="about">
+                <h2>About Me</h2>
+                <p>bio bio bio bio bio bio bio blah blah blah blah ....</p>
+                <p>blah blah blah blah blah blah blah blah blah blah blah blah</p>
+                <p>et cetera et cetera et cetera ....</p>
+                <Canvas camera={{ position: [-2.5,1.5,4], fov: 10 }}>
+                    <ambientLight intensity={0.5} />
+                    <Torso position={[0.3,-0.2,0]} rotation={[this.state.xRotation, this.state.yRotation, this.state.zRotation]} scale={0.225} />
+                    <Environment preset={this.state.environment} />
+                    <color args={[this.state.background]} attach="background"/>
+                </Canvas>
+            </div>
         )
     }
 }
