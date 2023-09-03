@@ -15,8 +15,8 @@ function Torso(props) {
 // camera fov : find relationship between fov and scale to make mesh appear the same size each time fov is changed
 
 const ENVIRONMENT_PRESETS = ["city", "dawn", "forest", "studio", "sunset"]
-const BACKGROUND_COLORS = ["#fff", "#808080", "#cdbaba", "#697b56", "#a39a8e", "#373137"]
-const MOUSE_SENSITIVITY = 400;
+const BACKGROUND_COLORS = ["#808080", "#cdbaba", "#a39a8e"]
+const MOUSE_SENSITIVITY = 600;
 
 // TODO: 
 // remesh and touch up torso model
@@ -73,10 +73,18 @@ export default class About extends React.Component {
         console.log(this.state.background);
         return (
             <div id="about">
-                <h2>About Me</h2>
-                <p>bio bio bio bio bio bio bio blah blah blah blah ....</p>
-                <p>blah blah blah blah blah blah blah blah blah blah blah blah</p>
-                <p>et cetera et cetera et cetera ....</p>
+                <div id="about-text">
+                    <h2>About Me</h2>
+                    <p>I am a sophomore Computer Science student at Stevens Institute of Technology.</p>
+                    <p>I know how to use Java and Python reasonably well, and am learning C++ through my school classes</p>
+                    <p>I also taught myself html/css and Javascript, as well some other web development tools like React, Node, and MongoDB</p>
+                    <p>Aside from my schoolwork, I am starter on the Stevens Fencing Team, and member of the Stevens CS Club, Stevens Blueprint Organization, 
+                        and Stevens Badminton Clubs.</p>
+                </div>
+                <div id="about-scroll">
+                    <p>V</p>
+                    <hr/>
+                </div>
                 <Canvas camera={{ position: [-2.5,1.5,4], fov: 10 }}>
                     <ambientLight intensity={0.5} />
                     <Torso position={[0.3,-0.2,0]} rotation={[this.state.xRotation, this.state.yRotation, this.state.zRotation]} scale={0.225} />

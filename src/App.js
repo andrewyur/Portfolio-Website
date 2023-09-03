@@ -16,9 +16,11 @@ export default class App extends React.Component {
             <>
                 <nav id="nav">
                     <h1>ANDREW YUROVCHAK</h1>
-                    <a href="#about">ABOUT</a>
-                    <a href="#about">ABOUT</a>
-                    <a href="#about">ABOUT</a>
+                    <div id="nav-links">
+                        <a href="#about">ABOUT</a>
+                        <a href="#about">ABOUT</a>
+                        <a href="#about">ABOUT</a>
+                    </div>
                 </nav>
                 <About/>
             </>
