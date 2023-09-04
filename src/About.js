@@ -15,7 +15,7 @@ function Torso(props) {
 // camera fov : find relationship between fov and scale to make mesh appear the same size each time fov is changed
 
 const ENVIRONMENT_PRESETS = ["city", "dawn", "forest", "studio", "sunset"]
-const BACKGROUND_COLORS = ["#808080", "#cdbaba", "#a39a8e"]
+const BACKGROUND_COLORS = ["#cdbaba"]
 const MOUSE_SENSITIVITY = 600;
 
 // TODO: 
@@ -29,6 +29,7 @@ const MOUSE_SENSITIVITY = 600;
 // autorotate / passive mouse rotation
 // content for about section
 // styling
+// add photos
 
 export default class About extends React.Component {
     constructor(props){
@@ -72,9 +73,8 @@ export default class About extends React.Component {
     render(){
         console.log(this.state.background);
         return (
-            <div id="about">
+            <div id="about" style={{backgroundColor: this.state.background}}>
                 <div id="about-text">
-                    <h2>About Me</h2>
                     <p>I am a sophomore Computer Science student at Stevens Institute of Technology.</p>
                     <p>I know how to use Java and Python reasonably well, and am learning C++ through my school classes</p>
                     <p>I also taught myself html/css and Javascript, as well some other web development tools like React, Node, and MongoDB</p>
@@ -82,14 +82,14 @@ export default class About extends React.Component {
                         and Stevens Badminton Clubs.</p>
                 </div>
                 <div id="about-scroll">
-                    <p>V</p>
+                    <p>Scroll</p>
                     <hr/>
                 </div>
-                <Canvas camera={{ position: [-2.5,1.5,4], fov: 10 }}>
+                <h1 id="about-background-text">ABOUT ME</h1>
+                <Canvas id="canvas" camera={{ position: [-2.5,1.5,4], fov: 10 }} >
                     <ambientLight intensity={0.5} />
                     <Torso position={[0.3,-0.2,0]} rotation={[this.state.xRotation, this.state.yRotation, this.state.zRotation]} scale={0.225} />
                     <Environment preset={this.state.environment} />
-                    <color args={[this.state.background]} attach="background"/>
                 </Canvas>
             </div>
         )
