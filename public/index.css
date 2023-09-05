@@ -2,6 +2,7 @@
     box-sizing: border-box;
     -webkit-user-drag: none;
     user-select: none;
+    pointer-events: none
 }
 
 html,
@@ -85,7 +86,11 @@ mix-blend-mode something
   box-sizing: border-box;
   height: 200vh;
   width: 100%;
-  
+  pointer-events: none 
+}
+
+#about * {
+  pointer-events: none
 }
 
 #about-text {
@@ -144,4 +149,5 @@ mix-blend-mode something
   left: 5%;
   color: #bacdcd;
   filter: blur(3px);
+  white-space: nowrap;
 }
