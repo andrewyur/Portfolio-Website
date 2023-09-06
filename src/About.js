@@ -3,13 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import { Canvas, act, useFrame } from '@react-three/fiber'
 import { useGLTF, Environment, OrbitControls } from '@react-three/drei'
 
-// interactivity variable ideas:
-// environment preset : apartment, city, dawn, forest, studio, sunset, 
-// background color : #fff, #808080, #cdbaba, #697b56, #a39a8e, #373137
-// mesh shader? 
-// mesh rotation : drag/click
-// camera fov : find relationship between fov and scale to make mesh appear the same size each time fov is changed
-
 const ENVIRONMENT_PRESETS = ["dawn"]
 const BACKGROUND_COLORS = ["#cdbaba"]
 const MOUSE_SENSITIVITY = 600;
@@ -18,14 +11,16 @@ const MOUSE_SENSITIVITY = 600;
 // remesh and touch up torso model
 // loading animation
 // shaders
-// text + text colors
 // rotation limiting/easing
 // refine background colors and environment presets
 // color transitions?
-// autorotate / passive mouse rotation
+// passive mouse rotation
 // content for about section
 // styling
 // add photos
+// photos interact with mesh
+// link mesh rotation to document scroll position
+// camera fov : find relationship between fov and scale to make mesh appear the same size each time fov is changed
 
 const Torso = function(props){
     const [active, setActive] = useState(false)
