@@ -14,6 +14,10 @@ body,
 }
 
 
+body::-webkit-scrollbar { 
+  display: none
+}
+
 /*
 
 TODO:
@@ -31,48 +35,26 @@ mix-blend-mode something
 /* ------------------------- NAV BAR ------------------------- */
 
 #nav {
-  width: 100%;
   position: fixed;
-  top: 0;
+  top: 5%;
+  right: 5vh;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 50px;
   align-items:end;
-  padding-top: 15px;
-  padding-right: 15px;
 }
 
-#nav h1 {
-  padding: 0 4px 0 4px;
-  font-size: 4rem;
-  letter-spacing: 5px;
-  margin: 0;
-  transform: skewX(-35deg);
-  position: relative;
-  left: -15px;
-  font-family: "EB Garamond"
-}
-
-#nav-links {
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0 34px 0 4px;
-  text-emphasis: none;
+#nav a {
+  transform: skewX(-15deg);
+  font-family: "Libre Baskerville";
   text-decoration: none;
+  text-emphasis: none;
   color: black;
   font-size: 1.5rem;
 }
 
-#nav-links a {
-  transform: skewX(-15deg);
-  font-family: "EB Garamond";
-  text-decoration: none;
-}
-
-#nav-links a:active, #nav-links a:visited {
+#nav a:active, #nav a:visited {
   text-emphasis: none;
   text-decoration: none;
   color: black;
@@ -96,14 +78,21 @@ mix-blend-mode something
 #about-text {
   position: absolute;
   top: 60%;
+  left: 10%;
   z-index: 1;
-  padding-left: 30px;
   margin: 0;
 }
 
-#about-text p {
-  padding-left: 2rem;
-  font-size: 1.2rem;
+#about-text h1 {
+  font-family: "Libre Baskerville";
+  font-size: 3rem;
+}
+
+#about-text h2 {
+  font-family: "Rubik"
+}
+
+#about-text * {
   color: transparent;
   background-image: linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,1) 70%);
   background-attachment: fixed;
@@ -111,9 +100,21 @@ mix-blend-mode something
   -webkit-background-clip: text;
 }
 
+/*
+#about-text p {
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  color: transparent;
+  background-image: linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,1) 70%);
+  background-attachment: fixed;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-family: "Rubik";
+}
+*/
 #about-scroll {
   position: absolute;
-  top: 80%;
+  top: 70%;
   right: 20%;
   z-index: 1;
 }
@@ -123,31 +124,33 @@ mix-blend-mode something
   background-clip: text;
   -webkit-background-clip: text;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(0,0,0,0) 25%, rgba(0,0,0,1)); 
+  background-image: linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,1) 70%);
+  font-family: "rubik";
+  font-size: 1.5rem;
 }
 
 #about-scroll hr {
   width: 1px;
-  height: 400px;
+  height: 800px;
   border: none;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(0,0,0,0) 25%, rgba(0,0,0,1));
+  background-image: linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,1) 70%);
 }
 
 #canvas {
   z-index: 0;
-  
 }
 
 #about-background-text {
-  font-family: "Kablammo";
-  font-size: 25rem;
+  font-family: "EB Garamond";
+  font-size: 18rem;
   padding: 0;
   margin: 0;
+  line-height: 18rem;
   position: absolute;
-  top: 10%;
-  left: 5%;
-  color: #bacdcd;
-  filter: blur(3px);
+  left: 10%;
+  top: 10vw;
+  color: #cfa9a9;
+  filter: blur(5px);
   white-space: nowrap;
 }
