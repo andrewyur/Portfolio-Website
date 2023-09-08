@@ -17,7 +17,8 @@ const MOUSE_SENSITIVITY = 600;
 // passive mouse rotation
 // content for about section
 // styling
-// add photos
+// add more photos
+// style photos to encourage mouseover
 // photos interact with mesh
 // link mesh rotation to document scroll position
 // camera fov : find relationship between fov and scale to make mesh appear the same size each time fov is changed
@@ -76,7 +77,40 @@ const Torso = function(props){
 const environment = ENVIRONMENT_PRESETS[Math.floor(Math.random() * ENVIRONMENT_PRESETS.length)]
 const background = BACKGROUND_COLORS[Math.floor(Math.random() * BACKGROUND_COLORS.length)]
 
+const HoverImg = function(props) {
+    const imgRef = useRef()
+    const wrapperRef = useRef()
+    const IMG_TRANSFORMS = {"img1":"translate(-25%, -25%) scale(1.2)", "img2":"translate(-25%, -25%) scale(1.2)", "img3":"translate(-25%, -25%) scale(1.2)"}
+
+    const handleMouseOver = function(){
+        console.log(IMG_TRANSFORMS[props.id])
+        imgRef.current.style.transform =  IMG_TRANSFORMS[props.id]
+        imgRef.current.classList.remove("blurme")
+        props.callback.fadeStart()
+    }
+
+    const handleMouseLeave = function(){
+        imgRef.current.style.transform = "none"
+        imgRef.current.classList.add("blurme")
+        props.callback.fadeEnd()
+    }
+
+    return <div id={props.id + "Wrapper"} className="animationWrapper" ref={wrapperRef} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
+            <img src={props.src} id={props.id} className="hoverImg blurme" ref={imgRef}/>
+        </div>
+}
+
+
 export default function About() {
+
+    const fadeStart = function(){
+        document.querySelectorAll(".blurme").forEach((d) => {d.style.filter = "blur(3px)"; d.style.transform = "scale(0.75)"})
+    }
+
+    const fadeEnd = function(){
+        document.querySelectorAll(".hoverImg").forEach((d) => {d.style.filter = "none"; d.style.transform = "none"})
+    }
+
     const aboutRef = useRef()
     return (
         <div id="about" style={{backgroundColor: background}} ref={aboutRef}>
@@ -94,6 +128,11 @@ export default function About() {
                     <Torso/>
                     <Environment preset={environment} />
                 </Canvas>
+                <div id="pictures">
+                    <HoverImg id="img1" src="/IMG-0189.jpg" callback={{fadeEnd, fadeStart}}/>
+                    <HoverImg id="img2" src="/IMG-0618.jpg" callback={{fadeEnd, fadeStart}}/>
+                    <HoverImg id="img3" src="/IMG-3064.JPEG" callback={{fadeEnd, fadeStart}}/>
+                </div>
             </div>
     )
 }

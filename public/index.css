@@ -61,10 +61,10 @@ mix-blend-mode something
   box-sizing: border-box;
   height: 200vh;
   width: 100%;
-  pointer-events: none 
+
 }
 
-#about * {
+#about p, h1, h2,img {
   pointer-events: none
 }
 
@@ -124,7 +124,7 @@ mix-blend-mode something
 
 #about-scroll hr {
   width: 1px;
-  height: 800px;
+  height: 400px;
   border: none;
   background-attachment: fixed;
   background-image: linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,1) 70%);
@@ -147,3 +147,55 @@ mix-blend-mode something
   filter: blur(5px);
   white-space: nowrap;
 }
+
+#pictures {
+  position: absolute;
+  left: 10%;
+  top: 120%;
+  width: 30vw;
+  height: 30vw;
+}
+
+.animationWrapper {
+  position: absolute;
+  width: max-content;
+  width:max-content;
+  overflow: visible;
+}
+
+.hoverImg {
+  transition: all .5s ease-in-out;
+  transform: none;
+}
+
+
+#img1 {
+  width: 25vw;
+  z-index: 3;
+}
+
+#img2 {
+  width: 20vw;
+}
+
+#img3 {
+  height: 25vw;
+}
+
+
+#img1Wrapper {
+  top: 0;
+  left: 0;
+}
+
+#img2Wrapper {
+  top: 50%;
+  left: 10%;
+}
+
+#img3Wrapper {
+  top: 20%;
+  left: 70%;
+}
+
+
