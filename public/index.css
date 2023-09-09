@@ -170,16 +170,39 @@ mix-blend-mode something
 
 
 #img1 {
-  width: 25vw;
-  z-index: 3;
+  width: 12vw;
 }
 
 #img2 {
-  width: 20vw;
+  width: 12vw;
 }
 
 #img3 {
-  height: 25vw;
+  height: 12vw;
+}
+
+#img4 {
+  width: 12vw;
+}
+
+#img5 {
+  width: 12vw;
+}
+
+#img6 {
+  width: 12vw;
+}
+
+#img7 {
+  width: 12vw;
+}
+
+#img8 {
+  width: 12vw;
+}
+
+#img9 {
+  width: 12vw;
 }
 
 
@@ -189,13 +212,29 @@ mix-blend-mode something
 }
 
 #img2Wrapper {
-  top: 50%;
-  left: 10%;
+  top: 0;
+  left: 13vw;
 }
 
 #img3Wrapper {
-  top: 20%;
-  left: 70%;
+  top: 0;
+  left: 27vw;
 }
+
+#img4Wrapper {
+  top: 20vh;
+  left: 0;
+}
+
+#img5Wrapper {
+  top: 0;
+  left: 13vw;
+}
+
+#img6Wrapper {
+  top: 0;
+  left: 27vw;
+}
+
 
 

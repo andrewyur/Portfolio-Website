@@ -132,6 +132,14 @@ export default function About() {
                     <HoverImg id="img1" src="/IMG-0189.jpg" callback={{fadeEnd, fadeStart}}/>
                     <HoverImg id="img2" src="/IMG-0618.jpg" callback={{fadeEnd, fadeStart}}/>
                     <HoverImg id="img3" src="/IMG-3064.JPEG" callback={{fadeEnd, fadeStart}}/>
+
+                    <HoverImg id="img4" src="/evil mickey mouse copy.png" callback={{fadeEnd, fadeStart}}/>
+                    <HoverImg id="img5" src="/IMG_0499.jpeg" callback={{fadeEnd, fadeStart}}/>
+                    <HoverImg id="img6" src="/IMG_1151.jpeg" callback={{fadeEnd, fadeStart}}/>
+
+                    <HoverImg id="img7" src="/IMG_1687.jpeg" callback={{fadeEnd, fadeStart}}/>
+                    <HoverImg id="img8" src="/IMG_2919.jpeg" callback={{fadeEnd, fadeStart}}/>
+                    <HoverImg id="img9" src="/little friend.png" callback={{fadeEnd, fadeStart}}/>
                 </div>
             </div>
     )
