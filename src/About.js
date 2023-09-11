@@ -1,7 +1,6 @@
-import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { Canvas, act, useFrame } from '@react-three/fiber'
-import { useGLTF, Environment, OrbitControls } from '@react-three/drei'
+import React, { useLayoutEffect, useState, useEffect, useRef } from "react";
+import { Canvas, useFrame } from '@react-three/fiber'
+import { useGLTF, Environment } from '@react-three/drei'
 
 const ENVIRONMENT_PRESETS = ["dawn"]
 const BACKGROUND_COLORS = ["#cdbaba"]
@@ -22,6 +21,10 @@ const MOUSE_SENSITIVITY = 600;
 // photos interact with mesh
 // link mesh rotation to document scroll position
 // camera fov : find relationship between fov and scale to make mesh appear the same size each time fov is changed
+// size images of equal area
+// idle effect
+// chromatic abberation hover effect
+
 
 const Torso = function(props){
     const [active, setActive] = useState(false)
@@ -80,23 +83,41 @@ const background = BACKGROUND_COLORS[Math.floor(Math.random() * BACKGROUND_COLOR
 const HoverImg = function(props) {
     const imgRef = useRef()
     const wrapperRef = useRef()
-    const IMG_TRANSFORMS = {"img1":"translate(-25%, -25%) scale(1.2)", "img2":"translate(-25%, -25%) scale(1.2)", "img3":"translate(-25%, -25%) scale(1.2)"}
+    const IMG_AREA = 60000
+    
+    const setSize = () => {
+        const aspect = imgRef.current.naturalWidth / imgRef.current.naturalHeight
+        imgRef.current.style.height = Math.sqrt(IMG_AREA * 1/aspect) + "px"
+        imgRef.current.style.width = Math.sqrt(IMG_AREA * aspect) + "px"
+
+        let clone = imgRef.current.cloneNode()
+        clone.id = props.id + "clone"
+        clone.style.position = "relative"
+        clone.style.top = "0%"
+        clone.style.transform = "translate(100px, 100px)"
+        clone.style.filter = "invert(85%) sepia(3%) saturate(3425%) hue-rotate(314deg) brightness(92%) contrast(75%) opacity(0.5)"
+        clone.style.zIndex = "2"
+        console.log(clone.id)
+        imgRef.current.after(clone)
+    }
 
     const handleMouseOver = function(){
-        console.log(IMG_TRANSFORMS[props.id])
-        imgRef.current.style.transform =  IMG_TRANSFORMS[props.id]
+        //imgRef.current.style.transform = 
         imgRef.current.classList.remove("blurme")
         props.callback.fadeStart()
     }
 
     const handleMouseLeave = function(){
-        imgRef.current.style.transform = "none"
+        //imgRef.current.style.transform = "none"
         imgRef.current.classList.add("blurme")
         props.callback.fadeEnd()
     }
 
+
+    
+
     return <div id={props.id + "Wrapper"} className="animationWrapper" ref={wrapperRef} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
-            <img src={props.src} id={props.id} className="hoverImg blurme" ref={imgRef}/>
+            <img src={props.src} id={props.id} className="hoverImg blurme" ref={imgRef} onLoad={setSize}/>
         </div>
 }
 
@@ -104,11 +125,11 @@ const HoverImg = function(props) {
 export default function About() {
 
     const fadeStart = function(){
-        document.querySelectorAll(".blurme").forEach((d) => {d.style.filter = "blur(3px)"; d.style.transform = "scale(0.75)"})
+        document.querySelectorAll(".blurme").forEach((d) => {d.style.filter += " blur(3px)"; d.style.transform = "scale(0.75)"})
     }
 
     const fadeEnd = function(){
-        document.querySelectorAll(".hoverImg").forEach((d) => {d.style.filter = "none"; d.style.transform = "none"})
+        document.querySelectorAll(".hoverImg").forEach((d) => {d.style.filter = d.style.filter == "blur(3px)" ? "none" : d.style.filter.slice(0, -10); d.style.transform = "none"})
     }
 
     const aboutRef = useRef()
@@ -133,7 +154,7 @@ export default function About() {
                     <HoverImg id="img2" src="/IMG-0618.jpg" callback={{fadeEnd, fadeStart}}/>
                     <HoverImg id="img3" src="/IMG-3064.JPEG" callback={{fadeEnd, fadeStart}}/>
 
-                    <HoverImg id="img4" src="/evil mickey mouse copy.png" callback={{fadeEnd, fadeStart}}/>
+                    <HoverImg id="img4" src="/evil mickey mouse.png" callback={{fadeEnd, fadeStart}}/>
                     <HoverImg id="img5" src="/IMG_0499.jpeg" callback={{fadeEnd, fadeStart}}/>
                     <HoverImg id="img6" src="/IMG_1151.jpeg" callback={{fadeEnd, fadeStart}}/>
 

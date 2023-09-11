@@ -151,61 +151,27 @@ mix-blend-mode something
 #pictures {
   position: absolute;
   left: 10%;
-  top: 120%;
-  width: 30vw;
+  top: 115%;
+  width: 80vw;
   height: 30vw;
+  display: flex;
+
 }
 
 .animationWrapper {
-  position: absolute;
   width: max-content;
-  width:max-content;
+  width: max-content;
   overflow: visible;
 }
 
 .hoverImg {
   transition: all .5s ease-in-out;
   transform: none;
+  position: absolute;
 }
 
 
-#img1 {
-  width: 12vw;
-}
-
-#img2 {
-  width: 12vw;
-}
-
-#img3 {
-  height: 12vw;
-}
-
-#img4 {
-  width: 12vw;
-}
-
-#img5 {
-  width: 12vw;
-}
-
-#img6 {
-  width: 12vw;
-}
-
-#img7 {
-  width: 12vw;
-}
-
-#img8 {
-  width: 12vw;
-}
-
-#img9 {
-  width: 12vw;
-}
-
-
+/* 
 #img1Wrapper {
   top: 0;
   left: 0;
@@ -237,4 +203,4 @@ mix-blend-mode something
 }
 
 
-
+ */
