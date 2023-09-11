@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useState, useEffect, useRef } from "react";
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useGLTF, Environment } from '@react-three/drei'
+import { WrapAroundEnding } from "three";
 
 const ENVIRONMENT_PRESETS = ["dawn"]
 const BACKGROUND_COLORS = ["#cdbaba"]
@@ -83,40 +84,43 @@ const background = BACKGROUND_COLORS[Math.floor(Math.random() * BACKGROUND_COLOR
 const HoverImg = function(props) {
     const imgRef = useRef()
     const wrapperRef = useRef()
-    const IMG_AREA = 60000
+    const card1Ref = useRef()
+    const card2Ref = useRef()
+    const IMG_AREA = 100000
     
     const setSize = () => {
         const aspect = imgRef.current.naturalWidth / imgRef.current.naturalHeight
         imgRef.current.style.height = Math.sqrt(IMG_AREA * 1/aspect) + "px"
         imgRef.current.style.width = Math.sqrt(IMG_AREA * aspect) + "px"
 
-        let clone = imgRef.current.cloneNode()
-        clone.id = props.id + "clone"
-        clone.style.position = "relative"
-        clone.style.top = "0%"
-        clone.style.transform = "translate(100px, 100px)"
-        clone.style.filter = "invert(85%) sepia(3%) saturate(3425%) hue-rotate(314deg) brightness(92%) contrast(75%) opacity(0.5)"
-        clone.style.zIndex = "2"
-        console.log(clone.id)
-        imgRef.current.after(clone)
+        wrapperRef.current.style.height = imgRef.current.style.height
+        wrapperRef.current.style.width = Math.sqrt(IMG_AREA * aspect) + "px"
+
     }
 
     const handleMouseOver = function(){
-        //imgRef.current.style.transform = 
+        card1Ref.current.style.transform = "translate(1vw, 1vw)" 
+        card2Ref.current.style.transform = "translate(-1vw, -1vw)"
+        imgRef.current.style.filter = "none" 
         imgRef.current.classList.remove("blurme")
         props.callback.fadeStart()
     }
 
     const handleMouseLeave = function(){
-        //imgRef.current.style.transform = "none"
-        imgRef.current.classList.add("blurme")
+        card1Ref.current.style.transform = "none" 
+        card2Ref.current.style.transform = "none" 
+        imgRef.current.style.filter =  "grayscale(100%) sepia(3%) saturate(3425%) hue-rotate(314deg) brightness(92%) contrast(75%)"  
         props.callback.fadeEnd()
+        imgRef.current.classList.add("blurme")
+
     }
 
 
     
 
     return <div id={props.id + "Wrapper"} className="animationWrapper" ref={wrapperRef} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
+            <div id={props.id+"card1"} className="card" ref={card1Ref}/>
+            <div id={props.id+"card2"} className="card" ref={card2Ref}/>
             <img src={props.src} id={props.id} className="hoverImg blurme" ref={imgRef} onLoad={setSize}/>
         </div>
 }
@@ -125,11 +129,11 @@ const HoverImg = function(props) {
 export default function About() {
 
     const fadeStart = function(){
-        document.querySelectorAll(".blurme").forEach((d) => {d.style.filter += " blur(3px)"; d.style.transform = "scale(0.75)"})
+        document.querySelectorAll(".blurme").forEach((d) => {d.style.transform = "scale(0.85)"})
     }
 
     const fadeEnd = function(){
-        document.querySelectorAll(".hoverImg").forEach((d) => {d.style.filter = d.style.filter == "blur(3px)" ? "none" : d.style.filter.slice(0, -10); d.style.transform = "none"})
+        document.querySelectorAll(".blurme").forEach((d) => { d.style.transform = "none"})
     }
 
     const aboutRef = useRef()
@@ -150,17 +154,11 @@ export default function About() {
                     <Environment preset={environment} />
                 </Canvas>
                 <div id="pictures">
-                    <HoverImg id="img1" src="/IMG-0189.jpg" callback={{fadeEnd, fadeStart}}/>
-                    <HoverImg id="img2" src="/IMG-0618.jpg" callback={{fadeEnd, fadeStart}}/>
-                    <HoverImg id="img3" src="/IMG-3064.JPEG" callback={{fadeEnd, fadeStart}}/>
+                    <HoverImg id="img1" src="/IMG-3064.JPEG" callback={{fadeEnd, fadeStart}}/>
 
-                    <HoverImg id="img4" src="/evil mickey mouse.png" callback={{fadeEnd, fadeStart}}/>
-                    <HoverImg id="img5" src="/IMG_0499.jpeg" callback={{fadeEnd, fadeStart}}/>
-                    <HoverImg id="img6" src="/IMG_1151.jpeg" callback={{fadeEnd, fadeStart}}/>
-
-                    <HoverImg id="img7" src="/IMG_1687.jpeg" callback={{fadeEnd, fadeStart}}/>
-                    <HoverImg id="img8" src="/IMG_2919.jpeg" callback={{fadeEnd, fadeStart}}/>
-                    <HoverImg id="img9" src="/little friend.png" callback={{fadeEnd, fadeStart}}/>
+                    <HoverImg id="img3" src="/IMG-0189.jpg" callback={{fadeEnd, fadeStart}}/>
+                </div>
+                <div id="about-text-2">
                 </div>
             </div>
     )

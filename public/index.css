@@ -29,8 +29,8 @@ mix-blend-mode something
 
 #nav {
   position: fixed;
-  top: 5%;
-  right: 5vh;
+  top: 7vh;
+  right: 7vh;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -124,7 +124,7 @@ mix-blend-mode something
 
 #about-scroll hr {
   width: 1px;
-  height: 400px;
+  height: 35vh;
   border: none;
   background-attachment: fixed;
   background-image: linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,1) 70%);
@@ -150,57 +150,33 @@ mix-blend-mode something
 
 #pictures {
   position: absolute;
-  left: 10%;
-  top: 115%;
+  left: 7vw;
+  top: 107%;
   width: 80vw;
   height: 30vw;
   display: flex;
-
+  flex-direction: column-reverse;
+  gap: 13vh;
 }
 
 .animationWrapper {
-  width: max-content;
-  width: max-content;
   overflow: visible;
 }
 
 .hoverImg {
   transition: all .5s ease-in-out;
   transform: none;
+  z-index: 3;
   position: absolute;
+  filter: grayscale(100%) sepia(3%) saturate(3425%) hue-rotate(314deg) brightness(92%) contrast(75%) ;
+  width: 15vw
 }
 
-
-/* 
-#img1Wrapper {
-  top: 0;
-  left: 0;
+.card {
+  background-color: black;
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  z-index: 0;
+  transition: all .5s ease-in-out;
 }
-
-#img2Wrapper {
-  top: 0;
-  left: 13vw;
-}
-
-#img3Wrapper {
-  top: 0;
-  left: 27vw;
-}
-
-#img4Wrapper {
-  top: 20vh;
-  left: 0;
-}
-
-#img5Wrapper {
-  top: 0;
-  left: 13vw;
-}
-
-#img6Wrapper {
-  top: 0;
-  left: 27vw;
-}
-
-
- */
