@@ -86,37 +86,25 @@ const HoverImg = function(props) {
     const wrapperRef = useRef()
     const card1Ref = useRef()
     const card2Ref = useRef()
-    const IMG_AREA = 100000
     
     const setSize = () => {
-        const aspect = imgRef.current.naturalWidth / imgRef.current.naturalHeight
-        imgRef.current.style.height = Math.sqrt(IMG_AREA * 1/aspect) + "px"
-        imgRef.current.style.width = Math.sqrt(IMG_AREA * aspect) + "px"
-
-        wrapperRef.current.style.height = imgRef.current.style.height
-        wrapperRef.current.style.width = Math.sqrt(IMG_AREA * aspect) + "px"
-
+        card1Ref.current.style.transform = "translate(0.25vw, 0.25vw)" 
+        card2Ref.current.style.transform = "translate(-0.25vw, -0.25vw)"
     }
 
     const handleMouseOver = function(){
         card1Ref.current.style.transform = "translate(1vw, 1vw)" 
         card2Ref.current.style.transform = "translate(-1vw, -1vw)"
         imgRef.current.style.filter = "none" 
-        imgRef.current.classList.remove("blurme")
-        props.callback.fadeStart()
     }
 
     const handleMouseLeave = function(){
-        card1Ref.current.style.transform = "none" 
-        card2Ref.current.style.transform = "none" 
-        imgRef.current.style.filter =  "grayscale(100%) sepia(3%) saturate(3425%) hue-rotate(314deg) brightness(92%) contrast(75%)"  
-        props.callback.fadeEnd()
-        imgRef.current.classList.add("blurme")
+        card1Ref.current.style.transform = "translate(0.25vw, 0.25vw)" 
+        card2Ref.current.style.transform = "translate(-0.25vw, -0.25vw)"
+        imgRef.current.style.filter =  "grayscale(100%) sepia(3%) saturate(3425%) hue-rotate(-46deg) brightness(92%) contrast(75%)"  
+
 
     }
-
-
-    
 
     return <div id={props.id + "Wrapper"} className="animationWrapper" ref={wrapperRef} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
             <div id={props.id+"card1"} className="card" ref={card1Ref}/>
@@ -127,15 +115,6 @@ const HoverImg = function(props) {
 
 
 export default function About() {
-
-    const fadeStart = function(){
-        document.querySelectorAll(".blurme").forEach((d) => {d.style.transform = "scale(0.85)"})
-    }
-
-    const fadeEnd = function(){
-        document.querySelectorAll(".blurme").forEach((d) => { d.style.transform = "none"})
-    }
-
     const aboutRef = useRef()
     return (
         <div id="about" style={{backgroundColor: background}} ref={aboutRef}>
@@ -153,11 +132,7 @@ export default function About() {
                     <Torso/>
                     <Environment preset={environment} />
                 </Canvas>
-                <div id="pictures">
-                    <HoverImg id="img1" src="/IMG-3064.JPEG" callback={{fadeEnd, fadeStart}}/>
-
-                    <HoverImg id="img3" src="/IMG-0189.jpg" callback={{fadeEnd, fadeStart}}/>
-                </div>
+                <HoverImg id="img1" src="/IMG-3064.JPEG"/>
                 <div id="about-text-2">
                 </div>
             </div>
