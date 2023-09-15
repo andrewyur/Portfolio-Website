@@ -61,7 +61,6 @@ mix-blend-mode something
   box-sizing: border-box;
   height: 200vh;
   width: 100%;
-
 }
 
 #about p, h1, h2,img {
@@ -108,7 +107,7 @@ mix-blend-mode something
 #about-scroll {
   position: absolute;
   top: 70%;
-  right: 20%;
+  right: 70%;
   z-index: 1;
 }
 
@@ -148,12 +147,13 @@ mix-blend-mode something
   white-space: nowrap;
 }
 
+/* 
 .animationWrapper {
   position: absolute;
   left: 7vw;
   top: 110%;
   overflow: visible;
-  width: 15vw;
+  height: 80vh
 }
 
 .hoverImg {
@@ -162,14 +162,39 @@ mix-blend-mode something
   position: relative;
   z-index: 3;
   filter: grayscale(100%) sepia(3%) saturate(3425%) hue-rotate(-46deg) brightness(92%) contrast(75%) ;
-  width: 15vw
+  height: 80vh
 }
 
 .card {
   background-color: black;
-  width: inherit;
-  height: 99.5%;
+  height: inherit;
+  width: 99.75%;
   position: absolute;
   z-index: 0;
   transition: all .5s ease-in-out;
+} */
+
+#e1 {
+  position: absolute;
+  z-index: 3;
+}
+
+#about-text-2 {
+  height: 60vh;
+  width: 60vw;
+  position: absolute;
+  top: 130%;
+  left: 20vw;
+  border: 1px solid white;
+  z-index: 1;
+  background-image: url(#e1);
+}
+
+#pic {
+  width: 10vh;
+}
+
+.class1 {
+  font: italic 13px sans-serif;
+  fill: blue;
 }

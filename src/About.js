@@ -81,37 +81,44 @@ const Torso = function(props){
 const environment = ENVIRONMENT_PRESETS[Math.floor(Math.random() * ENVIRONMENT_PRESETS.length)]
 const background = BACKGROUND_COLORS[Math.floor(Math.random() * BACKGROUND_COLORS.length)]
 
-const HoverImg = function(props) {
-    const imgRef = useRef()
-    const wrapperRef = useRef()
-    const card1Ref = useRef()
-    const card2Ref = useRef()
+// const HoverImg = function(props) {
+//     const imgRef = useRef()
+//     const wrapperRef = useRef()
+//     const card1Ref = useRef()
+//     const card2Ref = useRef()
     
-    const setSize = () => {
-        card1Ref.current.style.transform = "translate(0.25vw, 0.25vw)" 
-        card2Ref.current.style.transform = "translate(-0.25vw, -0.25vw)"
-    }
+//     const setSize = () => {
+//         card1Ref.current.style.transform = "translate(0.25vw, 0.25vw)" 
+//         card2Ref.current.style.transform = "translate(-0.25vw, -0.25vw)"
+//     }
 
-    const handleMouseOver = function(){
-        card1Ref.current.style.transform = "translate(1vw, 1vw)" 
-        card2Ref.current.style.transform = "translate(-1vw, -1vw)"
-        imgRef.current.style.filter = "none" 
-    }
+//     const handleMouseOver = function(){
+//         card1Ref.current.style.transform = "translate(1vw, 1vw)" 
+//         card2Ref.current.style.transform = "translate(-1vw, -1vw)"
+//         imgRef.current.style.filter = "none" 
+//     }
 
-    const handleMouseLeave = function(){
-        card1Ref.current.style.transform = "translate(0.25vw, 0.25vw)" 
-        card2Ref.current.style.transform = "translate(-0.25vw, -0.25vw)"
-        imgRef.current.style.filter =  "grayscale(100%) sepia(3%) saturate(3425%) hue-rotate(-46deg) brightness(92%) contrast(75%)"  
+//     const handleMouseLeave = function(){
+//         card1Ref.current.style.transform = "translate(0.25vw, 0.25vw)" 
+//         card2Ref.current.style.transform = "translate(-0.25vw, -0.25vw)"
+//         imgRef.current.style.filter =  "grayscale(100%) sepia(3%) saturate(3425%) hue-rotate(-46deg) brightness(92%) contrast(75%)"  
 
 
-    }
+//     }
 
-    return <div id={props.id + "Wrapper"} className="animationWrapper" ref={wrapperRef} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
-            <div id={props.id+"card1"} className="card" ref={card1Ref}/>
-            <div id={props.id+"card2"} className="card" ref={card2Ref}/>
-            <img src={props.src} id={props.id} className="hoverImg blurme" ref={imgRef} onLoad={setSize}/>
-        </div>
-}
+//     return <div id={props.id + "Wrapper"} className="animationWrapper" ref={wrapperRef} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
+//             <div id={props.id+"card1"} className="card" ref={card1Ref}/>
+//             <div id={props.id+"card2"} className="card" ref={card2Ref}/>
+//             <img src={props.src} id={props.id} className="hoverImg blurme" ref={imgRef} onLoad={setSize}/>
+//         </div>
+// }
+
+// <h1>My name is Andrew Yurovchak</h1>
+// <h2>I am a Computer Science student at Stevens Institute of Technology</h2>
+//
+// <HoverImg id="img1" src="/IMG-3064.JPEG"/>
+
+//<img id="pic" src="/pfp2hd.png"/>
 
 
 export default function About() {
@@ -119,8 +126,7 @@ export default function About() {
     return (
         <div id="about" style={{backgroundColor: background}} ref={aboutRef}>
                 <div id="about-text">
-                    <h1>Hi, I'm Andrew Yurovchak.</h1>
-                    <h2>I'm a sophomore at Stevens Institute of Technology.</h2>
+                    
                 </div>
                 <div id="about-scroll">
                     <p>Scroll</p>
@@ -132,8 +138,9 @@ export default function About() {
                     <Torso/>
                     <Environment preset={environment} />
                 </Canvas>
-                <HoverImg id="img1" src="/IMG-3064.JPEG"/>
                 <div id="about-text-2">
+                    
+                    <h1></h1>
                 </div>
             </div>
     )
