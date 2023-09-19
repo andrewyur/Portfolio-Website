@@ -6,14 +6,25 @@ Instead of using create-react-app, I opted to create it from scratch with guidan
 I used code from [this codesandbox](https://codesandbox.io/s/gltf-simple-example-v44gg?file=/src/styles.css:33-133) as a baseline to display my torso model with r3f, all further tweaks and changes were made by me.
 
 
+
 // TODO:
-// pick out specific aspect from inspirations to recreate
+// choose specific objectives to create in codesandbox
+
+// CREATE:
+// https://jonasemmertsen.com/ - elements and text flicker when loading in - https://codesandbox.io/s/loading-delay-demo-2pvh64
+// https://www.deso.com/ - ehhhh later
+// https://seed.com/ - ^
+// monopo - NEXT - read https://thebookofshaders.com/00/ and https://open.gl/introduction
+// https://lunchbox.io/ - open up photoshop or ms paint, just incorporate doodles floating around in final portfolio
+
+// 
+
 
 // TOOLS:
 // greenstack animation library
 
 // INSPIRATIONS:
-// https://jonasemmertsen.com/ - quiet and subtle text animations that are reused throughout the site
+// https://jonasemmertsen.com/ - elements dont load all at once, letters in text follow suit, soft scroll
 // https://mathijshanenkamp.com/ - simple and quiet minimalistic theme and typography
 // https://www.deso.com/ - scroll based animations, idle animations in 3d scene, passive mouse movement interactions
 //      good transition from 3d scene to solid background, good typeface, good buttons/cta, grain mask (shouldn't be over background)
@@ -29,3 +40,4 @@ I used code from [this codesandbox](https://codesandbox.io/s/gltf-simple-example
 
 // more inspiration - https://www.awwwards.com/
 // look at awards platforms by checking awards on other sites
+// build websites inspired by the above for fake clients created with ai, display as projects
