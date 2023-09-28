@@ -7,37 +7,33 @@ I used code from [this codesandbox](https://codesandbox.io/s/gltf-simple-example
 
 
 
-// TODO:
-// choose specific objectives to create in codesandbox
+TODO:
+  choose specific objectives to create in codesandbox
 
-// CREATE:
-// https://jonasemmertsen.com/ - elements and text flicker when loading in - https://codesandbox.io/s/loading-delay-demo-2pvh64
-// https://www.deso.com/ - ehhhh later
-// https://seed.com/ - ^
-// monopo - NEXT - read https://thebookofshaders.com/00/ and https://open.gl/introduction
-// https://lunchbox.io/ - open up photoshop or ms paint, just incorporate doodles floating around in final portfolio
+CREATE:
+  https://jonasemmertsen.com/ - elements and text flicker when loading in - https://codesandbox.io/s/loading-delay-demo-2pvh64
+  https://www.deso.com/ - ehhhh later
+  https://seed.com/ - ^
+  monopo - NEXT - read https://thebookofshaders.com/00/ and https://open.gl/introduction
+  https://lunchbox.io/ - open up photoshop or ms paint, just incorporate doodles floating around in final portfolio
 
-// 
+TOOLS:
+  greenstack animation library
 
+INSPIRATIONS:
+  https://jonasemmertsen.com/ - elements dont load all at once, letters in text follow suit, soft scroll
+  https://mathijshanenkamp.com/ - simple and quiet minimalistic theme and typography
+  https://www.deso.com/ - scroll based animations, idle animations in 3d scene, passive mouse movement interactions 
+      good transition from 3d scene to solid background, good typeface, good buttons/cta, grain mask (shouldn't be over background)
+  https://www.youtube.com/watch?v=XJBNQeSR8LQ - shader (<3 <3) could work in three.js
+  https://seed.com/ - interesting thematic background footage mixed with simple emphasis hero
+  https://monopo.nyc/ - sideways scroll, passive interactive hero
+  https://monopo.london/ - interactive background with filters
+  https://monopo.co.jp/ - scroll animations start on first scroll input, only depend on scroll for start
+  https://lunchbox.io/ - contained grain/filter, distinct theme and color, tiny floating little doodles
+  https://www.richardekwonye.com/ - big text, good pictures/assets
+  https://dennissnellenberg.com/ - bouncy animations, fast at start and scroll and steady after that
+  https://www.guillaumetomasi.com/ - mouse filter, auto cycle on idle
 
-// TOOLS:
-// greenstack animation library
-
-// INSPIRATIONS:
-// https://jonasemmertsen.com/ - elements dont load all at once, letters in text follow suit, soft scroll
-// https://mathijshanenkamp.com/ - simple and quiet minimalistic theme and typography
-// https://www.deso.com/ - scroll based animations, idle animations in 3d scene, passive mouse movement interactions
-//      good transition from 3d scene to solid background, good typeface, good buttons/cta, grain mask (shouldn't be over background)
-// https://www.youtube.com/watch?v=XJBNQeSR8LQ - shader (<3 <3) could work in three.js
-// https://seed.com/ - interesting thematic background footage mixed with simple emphasis hero
-// https://monopo.nyc/ - sideways scroll, passive interactive hero
-// https://monopo.london/ - interactive background with filters
-// https://monopo.co.jp/ - scroll animations start on first scroll input, only depend on scroll for start
-// https://lunchbox.io/ - contained grain/filter, distinct theme and color, tiny floating little doodles
-// https://www.richardekwonye.com/ - big text, good pictures/assets
-// https://dennissnellenberg.com/ - bouncy animations, fast at start and scroll and steady after that
-// https://www.guillaumetomasi.com/ - mouse filter, auto cycle on idle
-
-// more inspiration - https://www.awwwards.com/
-// look at awards platforms by checking awards on other sites
-// build websites inspired by the above for fake clients created with ai, display as projects
+  more inspiration - https://www.awwwards.com/
+  look at awards platforms by checking awards on other sites
