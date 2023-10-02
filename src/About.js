@@ -69,57 +69,8 @@ const Torso = function(props){
     />
 }
 
-/* <p>The allure of creation, the </p>
-
-
-                    <p>As a kid, I was obsessed with LEGO and origami, enthralled by my ability to create, and the skill and precision necessary to do so.</p>
-                    <p>Now, I am a sophomore at Stevens Institute of Technology, pursuing a career in web design and software development.</p>
-                    <p></p>
-                    <p>Aside from my schoolwork, I am starter on the Stevens Fencing Team, and member of the Stevens CS Club, Stevens Blueprint Organization, 
-                        and Stevens Badminton Clubs.</p> */
-
 const environment = ENVIRONMENT_PRESETS[Math.floor(Math.random() * ENVIRONMENT_PRESETS.length)]
 const background = BACKGROUND_COLORS[Math.floor(Math.random() * BACKGROUND_COLORS.length)]
-
-// const HoverImg = function(props) {
-//     const imgRef = useRef()
-//     const wrapperRef = useRef()
-//     const card1Ref = useRef()
-//     const card2Ref = useRef()
-    
-//     const setSize = () => {
-//         card1Ref.current.style.transform = "translate(0.25vw, 0.25vw)" 
-//         card2Ref.current.style.transform = "translate(-0.25vw, -0.25vw)"
-//     }
-
-//     const handleMouseOver = function(){
-//         card1Ref.current.style.transform = "translate(1vw, 1vw)" 
-//         card2Ref.current.style.transform = "translate(-1vw, -1vw)"
-//         imgRef.current.style.filter = "none" 
-//     }
-
-//     const handleMouseLeave = function(){
-//         card1Ref.current.style.transform = "translate(0.25vw, 0.25vw)" 
-//         card2Ref.current.style.transform = "translate(-0.25vw, -0.25vw)"
-//         imgRef.current.style.filter =  "grayscale(100%) sepia(3%) saturate(3425%) hue-rotate(-46deg) brightness(92%) contrast(75%)"  
-
-
-//     }
-
-//     return <div id={props.id + "Wrapper"} className="animationWrapper" ref={wrapperRef} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
-//             <div id={props.id+"card1"} className="card" ref={card1Ref}/>
-//             <div id={props.id+"card2"} className="card" ref={card2Ref}/>
-//             <img src={props.src} id={props.id} className="hoverImg blurme" ref={imgRef} onLoad={setSize}/>
-//         </div>
-// }
-
-// <h1>My name is Andrew Yurovchak</h1>
-// <h2>I am a Computer Science student at Stevens Institute of Technology</h2>
-//
-// <HoverImg id="img1" src="/IMG-3064.JPEG"/>
-
-//<img id="pic" src="/pfp2hd.png"/>
-
 
 export default function About() {
     const aboutRef = useRef()

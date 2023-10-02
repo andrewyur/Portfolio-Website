@@ -12,18 +12,14 @@ body,
   padding: 0;
 }
 
-
-body::-webkit-scrollbar { 
-  display: none
+#main {
+  position: fixed;
 }
 
-/*
-
-TODO:
-mix-blend-mode something
-*/
-
-
+::-webkit-scrollbar { 
+  width: 0;
+  display: none
+}
 
 /* ------------------------- NAV BAR ------------------------- */
 
@@ -53,7 +49,56 @@ mix-blend-mode something
   color: black;
 }
 
+/* ------------------------- TESTING ------------------------- */
+
+#test, #test2 {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+#test {
+  background-color: aquamarine;
+}
+
+#test2 {
+  background-color: bisque;
+}
+
+#test h1, #test2 h1 {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+}
+
+#test h1 {
+  top: 50vh;
+}
+
+#test2 h1 {
+  top: 100vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ------------------------- ABOUT SECTION ------------------------- */
+ 
+/*
 
 #about {
   margin: 0;
@@ -92,7 +137,7 @@ mix-blend-mode something
   -webkit-background-clip: text;
 }
 
-/*
+/-*
 #about-text p {
   padding-left: 2rem;
   font-size: 1.5rem;
@@ -103,7 +148,7 @@ mix-blend-mode something
   -webkit-background-clip: text;
   font-family: "Rubik";
 }
-*/
+*-/
 #about-scroll {
   position: absolute;
   top: 70%;
@@ -147,7 +192,7 @@ mix-blend-mode something
   white-space: nowrap;
 }
 
-/* 
+/-* 
 .animationWrapper {
   position: absolute;
   left: 7vw;
@@ -172,7 +217,7 @@ mix-blend-mode something
   position: absolute;
   z-index: 0;
   transition: all .5s ease-in-out;
-} */
+} *-/
 
 #e1 {
   position: absolute;
@@ -198,3 +243,5 @@ mix-blend-mode something
   font: italic 13px sans-serif;
   fill: blue;
 }
+
+*/
