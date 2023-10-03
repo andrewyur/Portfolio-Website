@@ -6,7 +6,6 @@ export default function App() {
     const appRef = useRef();
     let layer1;
     let layer2;
-    let layer21;
     let divOffset = 0;
     let divOffset2 = 0;
     let scrollPosition = 0;
@@ -16,15 +15,14 @@ export default function App() {
     }
 
     useLayoutEffect(() => {
-
         layer1 = document.querySelectorAll(".layer1");
         layer2 = document.querySelectorAll(".layer2");
-        layer21 = document.querySelectorAll(".layer21");
         const main = document.getElementById("main");
         document.body.style.height = main.clientHeight + "px";
-        console.log(main.clientHeight)
         window.requestAnimationFrame(render);
     });
+
+    console.log("here")
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -46,27 +44,23 @@ export default function App() {
           Math.floor(linearInterpolation(divOffset2, scrollPosition, 0.04) * 100) /
           100;
         if(appRef.current != null){
-            appRef.current.style.transform = `translateY(-${divOffset * 0.5}px)`; 
+            appRef.current.style.transform = `translateY(-${divOffset}px)`; 
             layer1.forEach((e) => {
                 e.style.transform = `translateY(-${divOffset * 0.5}px)`;
             })
             layer2.forEach((e) => {
                 e.style.transform = `translateY(-${divOffset2 * 0.8}px)`;
             })
-            layer21.forEach((e) => {
-                e.style.transform = `translateY(-${divOffset2 * 0.8}px)`;
-            })   
         }
         window.requestAnimationFrame(render);
     };
 
-
     return (
             <>
                 <nav id="nav">
-                    <a href="#about">ABOUT</a>
-                    <a href="#about">ABOUT</a>
-                    <a href="#about">ABOUT</a>
+                    <a onClick={() => {window.scroll(0, 0)}}>ABOUT</a>
+                    <a onClick={() => {window.scroll(0, document.getElementById("projects").offsetTop)}}>PROJECTS</a>
+                    <a>CONTACT</a>
                 </nav>
                 <div id="main" ref={appRef}>
                     <About/>

@@ -34,26 +34,20 @@ body,
   position: fixed;
   top: 7vh;
   right: 7vh;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 50px;
   align-items:end;
 }
 
-#nav a {
+#nav a, #nav a:active, #nav a:visited  {
   transform: skewX(-15deg);
   font-family: "Libre Baskerville";
   text-decoration: none;
   text-emphasis: none;
   color: black;
   font-size: 1.5rem;
-}
-
-#nav a:active, #nav a:visited {
-  text-emphasis: none;
-  text-decoration: none;
-  color: black;
 }
 
 /* ------------------------- TESTING ------------------------- */
@@ -104,7 +98,7 @@ body,
   left: 0;
 }
 
-#about .layer2 {
+#about #mix{
   background-color: black;
   mix-blend-mode: difference;
 }
@@ -182,14 +176,14 @@ body,
   z-index: 1;
 }
 
-#about-text-2-text {
+.about-text-2-text {
   position: absolute;
   width: 100vw;
   z-index: 2;
-  top: 220vh;
+  top: 205vh;
 }
 
-#about-text-2-text h1 {
+.about-text-2-text h1 {
   font-family: "Libre Baskerville";
   font-size: 4.5rem;
   position: relative;
@@ -200,14 +194,7 @@ body,
   mix-blend-mode: difference;
 }
 
-#about-text-2-text-2 {
-  position: absolute;
-  width: 100vw;
-  z-index: 2;
-  top: 220vh;
-}
-
-#about-text-2-text-2 img {
+.about-text-2-text img {
   height: 30vh;
   transform: skewX(-5deg) scaleX(1.5);
   position: relative;
@@ -215,7 +202,7 @@ body,
   left: 35vh;
 }
 
-#about-text-2-text-2 p {
+.about-text-2-text p {
   font-size: 3rem;
   font-family: 'Rubik';
   color: white;
