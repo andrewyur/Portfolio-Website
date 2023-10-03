@@ -41,6 +41,26 @@ const Torso = function(props){
         if(!active && window.scrollY > 0){
             torsoRef.current.rotation.z += 0.001;
             torsoRef.current.rotation.y += 0.002;
+
+            // BAD CODE!!!! dont judge me
+            if(torsoRef.current.rotation.z > Math.PI * 2 && !active){
+                torsoRef.current.rotation.z -= Math.PI * 2
+            }
+            if(torsoRef.current.rotation.y > Math.PI * 2 && !active){
+                torsoRef.current.rotation.y -= Math.PI * 2
+            }
+            if(torsoRef.current.rotation.x > Math.PI * 2 && !active){
+                torsoRef.current.rotation.x -= Math.PI * 2
+            }
+            if(torsoRef.current.rotation.z < Math.PI * -2 && !active){
+                torsoRef.current.rotation.z += Math.PI * 2
+            }
+            if(torsoRef.current.rotation.y < Math.PI * -2 && !active){
+                torsoRef.current.rotation.y += Math.PI * 2
+            }
+            if(torsoRef.current.rotation.x < Math.PI * -2 && !active){
+                torsoRef.current.rotation.x += Math.PI * 2
+            }
         }else if(!active && window.scrollY == 0){
             torsoRef.current.rotation.z = linearInterpolation(torsoRef.current.rotation.z, -0.5, 0.05);
             torsoRef.current.rotation.y = linearInterpolation(torsoRef.current.rotation.y, 0, 0.05);
@@ -71,14 +91,16 @@ const Torso = function(props){
     }
     return <primitive 
         ref={torsoRef}
-        position={[0.3,-0.2,0]} 
+        position={[0.3,-0.195,0]} 
         rotation={[-0.25, 0, -0.5]} 
-        scale={0.225} 
+        scale={0.2} 
         object={gltf.scene}
         material={gltf.material}
 
     />
 }
+
+//add pictures below about texts 1 and 2
 
 const environment = ENVIRONMENT_PRESETS[Math.floor(Math.random() * ENVIRONMENT_PRESETS.length)]
 const background = BACKGROUND_COLORS[Math.floor(Math.random() * BACKGROUND_COLORS.length)]
@@ -93,26 +115,30 @@ export default function About() {
                 <Environment preset={environment} />
             </Canvas>
             <div className="layer1">
-                <div id="about-text">
-                    <h1>Andrew Yurovchak</h1>
-                    <p>I am a sophomore CS student at Stevens Institute of Technology</p>
-                </div>
-                <div id="about-scroll">
-                    <p>Scroll + Drag</p>
-                    <hr/>
+                <div className="about-text">
+                <h1>Andrew Yurovchak</h1>
+                    <div id="bg"/>
                 </div>
                 <div id="about-text-2"></div>
             </div>
             <div className="layer2" id="mix">
                 <div className="about-text-2-text" id="mixtext">
-                    <h1>Aspiring Web + Software Designer</h1>
+                    <h1>Aspiring Web + Software Developer</h1>
+                </div>
+                <div id="about-scroll">
+                    <p>Scroll + Drag</p>
+                    <hr/>
                 </div>
             </div>
             <div className="layer2">
+                <div className="about-text">
+                    <p>Sophomore CS student at Stevens Institute of Technology</p>
+                    <p>I am located in Nashua, NH and Hoboken, NJ</p>
+                </div>
                 <div className="about-text-2-text">
                     <img src="/IMG_1687.jpeg"/>
-                    <p>I enjoy coding, 3d modelling, drawing, video games, and listening to music.
-                        I am a starting member of the Stevens fencing team, a designer for the Stevens Blueprint Organization,
+                    <p>I enjoy coding in JavaScript/Python/C++, doodling in MS Paint, folding origami, and listening to music.
+                        I am a starting member of the Stevens NCAA Div III fencing team, a designer for the Stevens Blueprint Organization,
                         and a brother of Alpha Xi of Chi Psi.
                     </p>
                 </div>

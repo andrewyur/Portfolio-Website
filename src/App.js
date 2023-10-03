@@ -41,7 +41,7 @@ export default function App() {
           Math.floor(linearInterpolation(divOffset, scrollPosition, 0.07) * 100) /
           100;
         divOffset2 =
-          Math.floor(linearInterpolation(divOffset2, scrollPosition, 0.04) * 100) /
+          Math.floor(linearInterpolation(divOffset2, scrollPosition, 0.05) * 100) /
           100;
         if(appRef.current != null){
             appRef.current.style.transform = `translateY(-${divOffset}px)`; 

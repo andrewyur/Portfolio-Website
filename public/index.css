@@ -90,7 +90,7 @@ body,
   left: 0;
 }
 
-#about .layer2, #about .layer21 {
+#about .layer2 {
   width: 100vw;
   height: 600vh;
   position: absolute;
@@ -107,11 +107,11 @@ body,
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 200vh;
+  height: 210vh;
   width: 100vw;
 }
 
-#about-text {
+.about-text {
   position: absolute;
   top: 60vh;
   left: 10%;
@@ -119,14 +119,43 @@ body,
   margin: 0;
 }
 
-#about-text h1 {
+.about-text h1 {
   font-family: "Libre Baskerville";
   font-size: 4rem;
 }
 
-#about-text p {
+.about-text p {
+  position: relative;
   font-family: "Rubik";
   font-size: 1.5rem;
+  background-color:palegoldenrod;
+  transform: skewX(-5deg);
+  border-radius: 5px;
+  border: 3px solid green;
+  padding: 7px;
+  letter-spacing: .3rem;
+  margin-top: -7px;
+  left: -4vw;
+  top: 14.5vh;
+}
+
+.about-text p:nth-of-type(2) {
+  left: 3vw;
+  letter-spacing: .2rem;
+  width: max-content;
+}
+
+.about-text #bg {
+  width: 27vw;
+  height: 10rem;
+  position: absolute;
+  background-color:palegoldenrod;
+  transform: skewX(-5deg);
+  border-radius: 5px;
+  border: 3px solid green;
+  top: 12vh;
+  left: 1vw;
+  z-index: -1;
 }
 
 #about-scroll {
@@ -138,14 +167,17 @@ body,
 
 #about-scroll p{
   font-family: "rubik";
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding: 15px;
+  color: white;
+  transform: skewX(-30deg)
 }
 
 #about-scroll hr {
   width: 1px;
   height: 40vh;
   border: none;
-  background-color: black;
+  background-color: white;
 }
 
 #canvas {
@@ -174,7 +206,42 @@ body,
   left: 20vw;
   background-color:cadetblue;
   z-index: 1;
+  border-radius: 5px;
+  transform: skewY(-1.5deg) skewX(-2deg);
 }
+
+#about-text-2:after {
+  content: "";
+  background-image: url("./noise.jpg");
+  opacity: 0.15;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  animation: .5s infinite linear r;
+  background-size: 300%;
+}
+
+@keyframes r {
+  0% {
+    background-position: left top;
+  }
+  25% {
+    background-position: right top;
+  }
+  50% {
+    background-position: left bottom;
+  }
+  75% {
+    background-position: right bottom;
+  }
+  100% {
+    background-position: left top;
+  }
+}
+
 
 .about-text-2-text {
   position: absolute;
@@ -190,8 +257,7 @@ body,
   left: 10vw;
   margin: 0;
   transform: scaleY(2) skewX(-30deg);
-  color: rgb(255, 255, 255);
-  mix-blend-mode: difference;
+  color: white;
 }
 
 .about-text-2-text img {
@@ -200,16 +266,23 @@ body,
   position: relative;
   top: 20vh;
   left: 35vh;
+  border: 10px solid black;
+  border-radius: 5px;
 }
 
 .about-text-2-text p {
-  font-size: 3rem;
+  font-size: 2rem;
+  line-height: 4rem;
   font-family: 'Rubik';
-  color: white;
+  color: black;
   width: 50vw;
   position: relative;
   left: 40vw;
   top: -15vh;
+  transform: skewX(-5deg);
+  background-color: coral;
+  padding: 1rem 2rem 1rem 2rem; 
+  border-radius: 5px;
 }
 
 /* ------------------------- PROJECTS SECTION ------------------------- */
