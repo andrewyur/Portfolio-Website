@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState, useEffect, useRef } from "react";
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { useGLTF, Environment } from '@react-three/drei'
-import { WrapAroundEnding } from "three";
+import { MeshStandardMaterial, WrapAroundEnding } from "three";
 
 const ENVIRONMENT_PRESETS = ["dawn"]
 const BACKGROUND_COLORS = ["#cdbaba"]
@@ -25,11 +25,13 @@ const MOUSE_SENSITIVITY = 600;
 // size images of equal area
 // idle effect
 // chromatic abberation hover effect
+// random texture/uvs/normal map etc
 
 
 const Torso = function(props){
     const [active, setActive] = useState(false)
     const torsoRef = useRef()
+    const gltf = useGLTF('/4 arm torso.glb');
     useFrame(() => {
         if(!active && window.scrollY > 1000){
             torsoRef.current.rotation.z += 0.001;
@@ -58,14 +60,14 @@ const Torso = function(props){
     const handleMouseUp = () => {
         setActive(false)
     }
-
-    console.log(props.offsetX)
     return <primitive 
         ref={torsoRef}
         position={[0.3,-0.2,0]} 
         rotation={[-0.25, 0, -0.5]} 
         scale={0.225} 
-        object={useGLTF('/4 arm torso.glb').scene}
+        object={gltf.scene}
+        material={gltf.material}
+
     />
 }
 
@@ -73,26 +75,39 @@ const environment = ENVIRONMENT_PRESETS[Math.floor(Math.random() * ENVIRONMENT_P
 const background = BACKGROUND_COLORS[Math.floor(Math.random() * BACKGROUND_COLORS.length)]
 
 export default function About() {
-    const aboutRef = useRef()
     return (
-        <div id="about" style={{backgroundColor: background}} ref={aboutRef}>
+        <div id="about" style={{backgroundColor: background}}>
+            <h1 id="about-background-text">ABOUT ME</h1>
+            <Canvas id="canvas" camera={{ position: [-2.5,1.5,4], fov: 10}}>
+                <ambientLight intensity={0.5} />
+                <Torso/>
+                <Environment preset={environment} />
+            </Canvas>
+            <div className="layer1">
                 <div id="about-text">
-                    
+                    <h1>Andrew Yurovchak</h1>
+                    <p>I am a sophomore CS student at Stevens Institute of Technology</p>
                 </div>
                 <div id="about-scroll">
                     <p>Scroll</p>
                     <hr/>
                 </div>
-                <h1 id="about-background-text">ABOUT ME</h1>
-                <Canvas id="canvas" camera={{ position: [-2.5,1.5,4], fov: 10}}>
-                    <ambientLight intensity={0.5} />
-                    <Torso/>
-                    <Environment preset={environment} />
-                </Canvas>
-                <div id="about-text-2">
-                    
-                    <h1></h1>
+                <div id="about-text-2"></div>
+            </div>
+            <div className="layer2">
+                <div id="about-text-2-text">
+                    <h1>Aspiring Web + Software Designer</h1>
                 </div>
             </div>
+            <div className="layer21">
+                <div id="about-text-2-text-2">
+                    <img src="/IMG_1687.jpeg"/>
+                    <p>I enjoy coding, 3d modelling, drawing, video games, and listening to music.
+                        I am a starting member of the Stevens fencing team, a designer for the Stevens Blueprint Organization,
+                        and a brother of Alpha Xi of Chi Psi.
+                    </p>
+                </div>
+            </div>
+        </div>
     )
 }

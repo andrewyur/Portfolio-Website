@@ -14,11 +14,18 @@ body,
 
 #main {
   position: fixed;
+
 }
 
 ::-webkit-scrollbar { 
   width: 0;
   display: none
+}
+
+#loading {
+  background-color: #cdbaba;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* ------------------------- NAV BAR ------------------------- */
@@ -79,42 +86,40 @@ body,
   top: 100vh;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ------------------------- ABOUT SECTION ------------------------- */
  
-/*
+#about .layer1 {
+  width: 100vw;
+  height: 400vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#about .layer2, #about .layer21 {
+  width: 100vw;
+  height: 600vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#about .layer2 {
+  background-color: black;
+  mix-blend-mode: difference;
+}
 
 #about {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   height: 200vh;
-  width: 100%;
-}
-
-#about p, h1, h2,img {
-  pointer-events: none
+  width: 100vw;
 }
 
 #about-text {
   position: absolute;
-  top: 60%;
+  top: 60vh;
   left: 10%;
   z-index: 1;
   margin: 0;
@@ -122,12 +127,149 @@ body,
 
 #about-text h1 {
   font-family: "Libre Baskerville";
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
-#about-text h2 {
-  font-family: "Rubik"
+#about-text p {
+  font-family: "Rubik";
+  font-size: 1.5rem;
 }
+
+#about-scroll {
+  position: absolute;
+  top: 60vh;
+  left: 70vw;
+  z-index: 1;
+}
+
+#about-scroll p{
+  font-family: "rubik";
+  font-size: 1.5rem;
+}
+
+#about-scroll hr {
+  width: 1px;
+  height: 40vh;
+  border: none;
+  background-color: black;
+}
+
+#canvas {
+  z-index: 0;
+}
+
+#about-background-text {
+  font-family: "EB Garamond";
+  font-size: 18rem;
+  padding: 0;
+  margin: 0;
+  line-height: 18rem;
+  position: absolute;
+  left: 10%;
+  top: 10vw;
+  color: #cfa9a9;
+  filter: blur(5px);
+  white-space: nowrap;
+}
+
+#about-text-2 {
+  height: 60vh;
+  width: 60vw;
+  position: absolute;
+  top: 180vh;
+  left: 20vw;
+  background-color:cadetblue;
+  z-index: 1;
+}
+
+#about-text-2-text {
+  position: absolute;
+  width: 100vw;
+  z-index: 2;
+  top: 220vh;
+}
+
+#about-text-2-text h1 {
+  font-family: "Libre Baskerville";
+  font-size: 4.5rem;
+  position: relative;
+  left: 10vw;
+  margin: 0;
+  transform: scaleY(2) skewX(-30deg);
+  color: rgb(255, 255, 255);
+  mix-blend-mode: difference;
+}
+
+#about-text-2-text-2 {
+  position: absolute;
+  width: 100vw;
+  z-index: 2;
+  top: 220vh;
+}
+
+#about-text-2-text-2 img {
+  height: 30vh;
+  transform: skewX(-5deg) scaleX(1.5);
+  position: relative;
+  top: 20vh;
+  left: 35vh;
+}
+
+#about-text-2-text-2 p {
+  font-size: 3rem;
+  font-family: 'Rubik';
+  color: white;
+  width: 50vw;
+  position: relative;
+  left: 40vw;
+  top: -15vh;
+}
+
+/* ------------------------- PROJECTS SECTION ------------------------- */
+ 
+#projects {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 200vh;
+  width: 100vw;
+  background-color: darkolivegreen;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
 
 #about-text * {
   color: transparent;
@@ -149,48 +291,10 @@ body,
   font-family: "Rubik";
 }
 *-/
-#about-scroll {
-  position: absolute;
-  top: 70%;
-  right: 70%;
-  z-index: 1;
-}
 
-#about-scroll p{
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-attachment: fixed;
-  background-image: linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,1) 70%);
-  font-family: "rubik";
-  font-size: 1.5rem;
-}
 
-#about-scroll hr {
-  width: 1px;
-  height: 35vh;
-  border: none;
-  background-attachment: fixed;
-  background-image: linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,1) 70%);
-}
 
-#canvas {
-  z-index: 0;
-}
 
-#about-background-text {
-  font-family: "EB Garamond";
-  font-size: 18rem;
-  padding: 0;
-  margin: 0;
-  line-height: 18rem;
-  position: absolute;
-  left: 10%;
-  top: 10vw;
-  color: #cfa9a9;
-  filter: blur(5px);
-  white-space: nowrap;
-}
 
 /-* 
 .animationWrapper {
@@ -224,16 +328,6 @@ body,
   z-index: 3;
 }
 
-#about-text-2 {
-  height: 60vh;
-  width: 60vw;
-  position: absolute;
-  top: 130%;
-  left: 20vw;
-  border: 1px solid white;
-  z-index: 1;
-  background-image: url(#e1);
-}
 
 #pic {
   width: 10vh;

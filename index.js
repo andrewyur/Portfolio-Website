@@ -7,7 +7,7 @@ import './public/index.css'
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
-<Suspense fallback={<div className="center">loading</div>}>
+<Suspense fallback={<div id="loading"></div>}>
     <App/>
 </Suspense>
 );
