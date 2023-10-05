@@ -136,7 +136,6 @@ body,
   letter-spacing: .3rem;
   margin-top: -7px;
   left: -4vw;
-  top: 14.5vh;
 }
 
 .about-text p:nth-of-type(2) {
@@ -186,16 +185,40 @@ body,
 
 #about-background-text {
   font-family: "EB Garamond";
-  font-size: 18rem;
+  font-size: 13vw;
   padding: 0;
   margin: 0;
-  line-height: 18rem;
+  line-height: 9vw;
   position: absolute;
   left: 10%;
   top: 10vw;
   color: #cfa9a9;
   filter: blur(5px);
   white-space: nowrap;
+}
+
+#about > .bg-img {
+  opacity: 0.5;
+  position: absolute;
+  transform: skewY(-1.5deg) skewX(-2deg);
+}
+
+#about > .bg-img:nth-of-type(1){
+  width: 30vw;
+  top: 100vh;
+  left: 10vw
+}
+
+#about > .bg-img:nth-of-type(2){
+  width: 20vw;
+  top: 160vh;
+  left: 5vw;
+}
+
+#about > .bg-img:nth-of-type(3){
+  width: 15vw;
+  top: 165vh;
+  left: 35vw;
 }
 
 #about-text-2 {

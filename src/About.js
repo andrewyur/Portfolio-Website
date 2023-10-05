@@ -37,10 +37,10 @@ const Torso = function(props){
         return (1 - easingValue) * x1 + easingValue * x2;
     }
 
-    useFrame(() => {
+    useFrame((state, delta) => {
         if(!active && window.scrollY > 0){
-            torsoRef.current.rotation.z += 0.001;
-            torsoRef.current.rotation.y += 0.002;
+            torsoRef.current.rotation.z += delta * 0.1;
+            torsoRef.current.rotation.y += delta * 0.2;
 
             // BAD CODE!!!! dont judge me
             if(torsoRef.current.rotation.z > Math.PI * 2 && !active){
@@ -109,6 +109,9 @@ export default function About() {
     return (
         <div id="about" style={{backgroundColor: background}}>
             <h1 id="about-background-text">ABOUT ME</h1>
+            <img className="bg-img" src="/IMG-0618.jpg"/>
+            <img className="bg-img" src="/IMG-0189.jpg"/>
+            <img className="bg-img" src="/IMG_0499.jpeg"/>
             <Canvas id="canvas" camera={{ position: [-2.5,1.5,4], fov: 10}}>
                 <ambientLight intensity={0.5} />
                 <Torso/>
@@ -116,7 +119,6 @@ export default function About() {
             </Canvas>
             <div className="layer1">
                 <div className="about-text">
-                <h1>Andrew Yurovchak</h1>
                     <div id="bg"/>
                 </div>
                 <div id="about-text-2"></div>
@@ -132,6 +134,7 @@ export default function About() {
             </div>
             <div className="layer2">
                 <div className="about-text">
+                    <h1>Andrew Yurovchak</h1>
                     <p>Sophomore CS student at Stevens Institute of Technology</p>
                     <p>I am located in Nashua, NH and Hoboken, NJ</p>
                 </div>
