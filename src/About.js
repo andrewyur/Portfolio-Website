@@ -109,9 +109,11 @@ export default function About() {
     return (
         <div id="about" style={{backgroundColor: background}}>
             <h1 id="about-background-text">ABOUT ME</h1>
-            <img className="bg-img" src="/IMG-0618.jpg"/>
             <img className="bg-img" src="/IMG-0189.jpg"/>
+            <img className="bg-img" src="/IMG-0618.jpg"/>
             <img className="bg-img" src="/IMG_0499.jpeg"/>
+            <img className="bg-img" src="/IMG_1151.jpeg"/>
+            <img className="bg-img" src="/happy spider crab.png"/>
             <Canvas id="canvas" camera={{ position: [-2.5,1.5,4], fov: 10}}>
                 <ambientLight intensity={0.5} />
                 <Torso/>

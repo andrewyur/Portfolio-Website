@@ -121,7 +121,9 @@ body,
 
 .about-text h1 {
   font-family: "Libre Baskerville";
-  font-size: 4rem;
+  font-size: 4vw;
+  margin-top: -0.5vh;
+  margin-right: -6vw
 }
 
 .about-text p {
@@ -221,6 +223,19 @@ body,
   left: 35vw;
 }
 
+#about > .bg-img:nth-of-type(4){
+  width: 20vw;
+  top: 100vh;
+  left: 45vw;
+}
+
+#about > .bg-img:nth-of-type(5){
+  width: 30vw;
+  height: 25vh;
+  top: 170vh;
+  left: 60vw;
+}
+
 #about-text-2 {
   height: 60vh;
   width: 60vw;
@@ -236,7 +251,7 @@ body,
 #about-text-2:after {
   content: "";
   background-image: url("./noise.jpg");
-  opacity: 0.15;
+  opacity: 0.3;
   position: absolute;
   top: 0;
   left: 0;
@@ -244,7 +259,7 @@ body,
   bottom: 0;
   z-index: 2;
   animation: .5s infinite linear r;
-  background-size: 300%;
+  background-size: 200%;
 }
 
 @keyframes r {
@@ -270,12 +285,12 @@ body,
   position: absolute;
   width: 100vw;
   z-index: 2;
-  top: 205vh;
+  top: 207vh;
 }
 
 .about-text-2-text h1 {
   font-family: "Libre Baskerville";
-  font-size: 4.5rem;
+  font-size: 3vw;
   position: relative;
   left: 10vw;
   margin: 0;
@@ -294,17 +309,17 @@ body,
 }
 
 .about-text-2-text p {
-  font-size: 2rem;
-  line-height: 4rem;
+  font-size: 1.5vw;
+  line-height: 3vw;
   font-family: 'Rubik';
-  color: black;
-  width: 50vw;
+  color: rgb(138, 44, 0);
+  width: 45vw;
   position: relative;
   left: 40vw;
   top: -15vh;
   transform: skewX(-5deg);
   background-color: coral;
-  padding: 1rem 2rem 1rem 2rem; 
+  padding: 1vw 2vw 1vw 2vw; 
   border-radius: 5px;
 }
 

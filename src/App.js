@@ -55,6 +55,13 @@ export default function App() {
         window.requestAnimationFrame(render);
     };
 
+
+    // theme
+    // gallery of pictures, interactive borders and filters, moving/flowing
+    // random 3d models and textures rotate and flow from side to side
+    // projects are pictures in the gallery, stationary and flowing
+    
+
     return (
             <>
                 <nav id="nav">
